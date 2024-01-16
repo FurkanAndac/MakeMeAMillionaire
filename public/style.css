@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#highScores {
+    margin: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.blurred {
+    /* filter: blur(5px); */
+}
+
+#scoreList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#scoreList li {
+    margin-bottom: 8px;
+}
+
+/* Update the style to include some spacing for clarity */
+#countrySelector {
+    margin-bottom: 20px;
+}
+
+/* Update the style to include some spacing for clarity */
+#countrySelector {
+    margin-bottom: 20px;
+}
+
+/* Style for flag emojis */
+#scoreList li {
+    display: flex;
+    align-items: center;
+}

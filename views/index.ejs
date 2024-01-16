@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Stripe Balance</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1, p {
+      text-align: center;
+    }
+  </style>
+
+
+</head>
+<body>
+  <div>
+    <h1>Stripe Balance</h1>
+    <% if (stripeBalance) { %>
+      <p>
+        Current Stripe balance:
+        <ul>
+          <li>Available: <%= stripeBalance.available.map(entry => entry.amount / 100).join(' ') %> USD</li>
+          <li>Pending: <%= stripeBalance.pending.map(entry => entry.amount / 100).join(' ') %> USD</li>
+          <!-- Add more fields as needed -->
+        </ul>
+      </p>
+    <% } else { %>
+      <p>Error fetching balance.</p>
+    <% } %>
+    <script async
+src="https://js.stripe.com/v3/buy-button.js">
+</script>
+
+<stripe-buy-button
+buy-button-id="buy_btn_1OZBQLCZEFBB4JZiTfNHlWb0"
+publishable-key="pk_test_51OYz2kCZEFBB4JZi6gmza0DAwrEDmOAH8ZYfRktfbdoTJhohMgNNREKek91eWdXu54ARFqsGjRtyLmKXiUObo9xx00yQ87F4NZ"
+>
+</stripe-buy-button>
+  </div>
+
+
+</body>
+
+</html>
